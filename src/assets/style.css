@@ -1,0 +1,16 @@
+.container-form{
+    flex-basis: 60%;
+}
+
+.form-login{
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.icon-login{
+    flex-basis: 40%;
+}
+
+::placeholder{
+    text-align: center;
+}
