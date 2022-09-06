@@ -13,4 +13,57 @@
 
 ::placeholder{
     text-align: center;
+    /* color: white; */
+}
+
+.login-input{
+    background-color:rgba(242, 241, 239, 0.8) ;
+    border: none;
+}
+
+.sidebar{
+    width: 18%;
+    height: 100vh;
+    box-shadow: 5px 4px 10px #e9ebee;
+    background-color: rgba(53, 58, 85, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.sidebar h1{
+    font-size: 2vw;
+    text-align: center;
+    padding-top: 15%;
+    font-weight: 900;
+    
+}
+
+.sidebar .dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+
+
+.sidebar .img-Dashboard{
+    width: 15%;
+}
+
+.sidebar .graduate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.sidebar .img-graduate{
+    width: 15%;
+}
+
+.sidebar h4{
+    padding-left: 1rem;
+    font-size: 1.5vw;
 }
