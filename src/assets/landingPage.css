@@ -1,0 +1,21 @@
+
+
+
+.items{
+    text-decoration: none;
+    color: white;
+}
+
+.items :hover{
+    color: blue;
+}
+
+.container-content{
+    background-color: #25244E;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 0px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+

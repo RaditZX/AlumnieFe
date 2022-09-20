@@ -1,30 +1,32 @@
 import {Form, Button} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../assets/style.css";
 
 export default function Login() {
-    return (
+    return ( 
         <>
-            <div className="d-flex justify-content-center " >
-                <div className="container-form" style={{paddingTop:"8rem"}}>
-                    <div className="form-login">
-                        <h1>Sign In</h1><br />
-                        <form action="">
-                            <Form.Control className="login-input" placeholder="Enter your email" /><br/>
-                            <Form.Control className="login-input" placeholder="Enter your password" /><br/>
-                            <Button style={{width:"100%"}}>Login</Button>
-                        </form>
-                    </div>
-                </div>
-                <div className="icon-login">
-                    <div className="d-flex flex-column align-items-center p-3">
-                        <h2 className="fw-bold">Alumnie</h2>
-                        <h5 className="text-primary">Aplikasi Pendataan Alumni</h5>
-                        <img 
-                        src={require("../assets/College graduates in robes toss up graduate caps against the background of the university building.png")} 
-                        alt="" />
+            <div className="background" style={{backgroundColor:"#EEF0FA" }}>
+                <div className="container d-flex justify-content-center align-items-center" style={{ height:"100vh" }}>
+                    <div className="container-login p-5">
+                        <div className="image d-flex align-items-center justify-content-center">
+                            <img src={require("../assets/charm_graduate-cap.png")}/>
+                        </div>
+                        <div className="form-login mt-4">
+                            <label htmlFor="">Email</label>
+                            <Form.Control style={{ backgroundColor:"#EFF1F9",border:"none" }} />
+                            <label htmlFor="">Password</label>
+                            <Form.Control type="password" style={{ backgroundColor:"#EFF1F9",border:"none" }}/>
+                            <div className="d-flex align-items-right justify-content-end mt-2">
+                                <Link style={{ textDecoration:"none"}}>ForgotPassword?</Link>
+                            </div>
+                            <div className="d-flex align-items-center justify-content-center mt-3">
+                                <Button style={{ width:"100%" }}>Login</Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
