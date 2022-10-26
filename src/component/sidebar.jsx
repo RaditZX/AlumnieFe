@@ -1,28 +1,32 @@
-import {Form, Button} from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import "../assets/style.css";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
     return (
         <>
-          <div className="sidebar">
-                <div className="header-side">
-                    <h1 style={{color:"white"}}>ALUMNIE</h1>
-                    <div className="side-item">
-                    <div className="dashboard">
-                        <img src={require("../assets/Vector.png")} alt="" className="img-Dashboard"/>
-                        <h4 style={{color:"white"}}>Dashboard</h4>
+            <div className="container-sidebar">
+                <img src={require("../assets/toga.png")} alt="" className="img-toga" />
+
+                <div className="component">
+                    <div className="container-dashboard">
+                        <img src={require("../assets/dashboard_1.png")} alt="" className="img-dashboard" />
+                        {/* <FontAwesomeIcon icon="fa-solid fa-grid-horizontal" /> */}
+                        {/* <font-awesome-icon icon="fa-solid fa-grid-horizontal" /> */}
+                        {/* <i class="fa-solid fa-grid-horizontal"></i> */}
                     </div>
-                    <div className="graduate">
-                        <img src={require("../assets/graduate.png")} alt="" className="img-graduate"/>
-                        <h4 style={{color:"white"}}>Data Alumni</h4>
+
+                    <div className="container-dashboard">
+                        <img src={require("../assets/active.png")} alt="" className="img-active" />
                     </div>
+
                 </div>
+
+                <div className="component-logout">
+                    <img src={require("../assets/Logout.png")} alt="" className="img-logout" />
                 </div>
-                <div className="side-bottom">
-                    <img src={require("../assets/Man studying analytics on laptop.png")}alt="" className="w-100"/>
-                </div>
-          </div>
+
+            </div>
         </>
     )
 }
