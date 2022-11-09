@@ -40,3 +40,253 @@
     padding: 0;
 }
 
+.d-flex1{
+    display: flex;
+    flex-direction: column;
+}
+
+/* SIDE BAR */
+.container-sidebar{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    /* justify-content:space-evenly; */
+    width: 5vw;
+    height: 100vh;
+    background-color: white;
+    /* border: 3px black; */
+    /* box-shadow: 10px 10px 5px rgb(129, 126, 126); */
+}
+
+.img-toga{
+    /* display: flex; */
+    width: 2.5vw;
+    height: 5.5vh;
+    margin-left: 13%;
+    margin-top: 10%;
+}
+
+.component{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 5VW;
+    height: 15vh;
+    /* background-color: red; */
+    margin-top: 130%;
+}
+
+.container-dashboard{
+    width: 4vw;
+    height: 8vh;
+    margin-left: 0.5vw; 
+}
+.img-dashboard{
+    /* display: flex; */
+    width: 1.5vw;
+    height: 3vh;
+    margin-left: 30%;
+    margin-top: 1vw;
+}
+
+.container-dashboard:hover{
+    background-color: #5570F1;
+    border-radius: 10px;
+    
+    /* background-image: url("../assets/dashboard.png"); */
+}
+
+.img-active{
+    /* display: flex; */
+    width: 3vw;
+    height: 7.3vh;
+    margin-left: 7%;
+    margin-top: 0vw;
+}
+
+.component-logout{
+    margin-top: 55vh;
+}
+
+.img-logout{
+    width: 3vw;
+    height: 6vh;
+    margin-left: 13%;
+}
+
+    /* NAVBAR */
+
+.container-navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+    height: 9vh;
+    background-color: white;
+    margin-left: 5vw;
+}
+.container-navbar-dua{
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+    height: 7vh;
+    background-color: white;
+    border-bottom-style:double;
+    border-bottom-width: thin;
+    border-bottom-color: rgb(241, 235, 235);
+}
+
+.container-navbar-dua h5{
+    font-family: poppins, sans-serif;
+    font-weight: 500;
+    margin-top: 9%;
+    margin-left: 1%;
+}
+
+.container-fluid{
+    background-color: #EEF0FA;
+    overflow-x: hidden;
+}
+
+.container-navbar-dua-kiri{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vw;
+    height: 7vh;
+    /* border: 1px solid red; */
+}
+
+.container-admin{
+    display: flex;
+    justify-content: space-evenly;
+    width: 7vw;
+    height: 4vh;
+    background-color: #FEF5EA;
+    border-radius: 10px ;
+    margin-top: 3%;
+}
+
+.container-admin h5{
+    font-size: 80%;
+    margin-top: 5%;
+}
+
+.img-admin{
+    width: 1.5vw;
+    height: 1.8vh;
+    margin-top: 5%;
+}
+
+.img-lonceng{
+    width: 1.5vw;
+    height: 3vh;
+    margin-top: 4.2%;
+}
+
+.img-profile{
+    width: 2.4vw;
+    height: 5vh;
+    margin-top: 1.5%; 
+}
+
+.container-jumlah{
+    display: flex;
+    width: 95vw;
+    height: 24vh;
+    /* border: 1px solid black; */
+}
+.container-jumlah-component{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-jumlah-component-kelas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30vw;
+    height: 20vh;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 1.5vh;
+    margin-left: 6.5vw;
+}
+
+.orang-alumni{
+display: flex;
+justify-content: space-around;
+}
+
+.jumlah-alumni{
+    display: flex;
+    flex-direction: column;
+}
+
+.jumlah{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: thin;
+    color: #8B8D97;
+    font-size: 25px;
+    display: flex;
+    margin-left: 10%;
+
+}
+
+.orang{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    color: black;
+    font-size: 35px;
+    display: flex;
+}
+
+.alumni{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    color: black;
+    font-size: 50px;
+    display: flex;
+}
+
+.container-bawah{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-diagram{
+    display: flex;
+    flex-direction: column;
+    width: 63vw;
+    height: 80vh;
+    /* border: 1px solid black; */
+    /* margin-left: 1vw; */
+}
+
+.container-diagram-bulat{
+    width: 55vw;
+    height: 40vh;
+    /* border: 1px solid black; */
+    margin-left: 6.5vw;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container-diagram-batang{
+    width: 55vw;
+    height: 40vh;
+    /* border: 1px solid black; */
+    margin-left: 6.5vw;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 1vw;
+}
+
+.container-keterserapan-alumni{
+    width: 34.5vw;
+    height: 80vh;
+    /* border: 1px solid black; */
+    background-color: white;
+    border-radius: 10px;
+}
