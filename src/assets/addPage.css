@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    
+    margin: 2rem;
+}
+
+.image {
+    margin-left: 10rem;
+    height: 200px;
+}
+
+.form {
+    margin-left: 10rem;
+    width: 500px;
+
+}
