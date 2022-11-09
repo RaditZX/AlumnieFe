@@ -15,5 +15,13 @@
 .form {
     margin-left: 10rem;
     width: 500px;
+}
 
+.d-flex1{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-nav {
+    
 }
