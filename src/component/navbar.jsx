@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="container-navbar">
         <div className="container-navbar-dua">
           <div className="container-navbar-dua-kanan">
-            <h5>Dashboard</h5>
+            <h5 className="dashboard">Dashboard</h5>
           </div>
           <div className="container-navbar-dua-kiri">
             <div className="container-admin">
