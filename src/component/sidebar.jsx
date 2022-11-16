@@ -11,13 +11,22 @@ export default function Sidebar() {
                 <div className="component">
                     <div className="container-dashboard">
                         <img src={require("../assets/dashboard_1.png")} alt="" className="img-dashboard" />
-                        {/* <FontAwesomeIcon icon="fa-solid fa-grid-horizontal" /> */}
-                        {/* <font-awesome-icon icon="fa-solid fa-grid-horizontal" /> */}
-                        {/* <i class="fa-solid fa-grid-horizontal"></i> */}
                     </div>
 
                     <div className="container-dashboard">
                         <img src={require("../assets/active.png")} alt="" className="img-active" />
+                    </div>
+
+                    <div className="container-dashboard">
+                        <img src={require("../assets/Work.png")} alt="" className="img-work" />
+                    </div>
+
+                    <div className="container-dashboard">
+                        <img src={require("../assets/Vector.png")} alt="" className="img-kuliah" />
+                    </div>
+
+                    <div className="container-dashboard">
+                        <img src={require("../assets/wirausaha.png")} alt="" className="img-wirausaha" />
                     </div>
 
                 </div>
