@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/landingPage';
+import AddPage from './pages/addPage';
 
 
 
@@ -15,10 +16,11 @@ function App() {
    <>
       <Router>
         <Routes>
-          <Route path="/" element={<Login/>}/>
+          <Route path="/Login" element={<Login/>}/>
           <Route path="/Register" element={<Register/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
-          <Route path="/Welcome" element={<LandingPage/>}/>
+          <Route path="/Add" element={<AddPage/>}/>
+          <Route path="/" element={<LandingPage/>}/>
         </Routes>
       </Router>
    </>

@@ -6,12 +6,12 @@ export default function LandingPage(){
     return (
         <>
             <Navbar/>
-            <div className="container-fluid d-flex flex-column align-items-center justify-content-center" style={{margin:"0",padding:"0"}}>
+            <div className="container-fluid d-flex flex-column align-items-center justify-content-center" style={{margin:"0"}}>
                 <div className="d-flex" style={{ backgroundColor:"#25244E",width:"100vw" }}>
                     <div className="image d-flex flex-column justify-content-center align-items-center " style={{ width:"100vw" }}>
-                        <img src={require("../assets/College graduates in robes toss up graduate caps against the background of the university building.png")}/>
+                        <img src={require("../assets/landing-1.png")}/>
                     </div>
-                    <div className="contents d-flex flex-column align-items-center justify-content-center" style={{ width:"100vw" }}>
+                    <div className="contents d-flex flex-column align-items-center justify-content-center" style={{ width:"100vw",height:"80vh" }}>
                         <div className="title d-flex flex-column align-items-center">
                             <h1 style={{ color: "white" }}>ALUMNIE</h1>
                         </div>
