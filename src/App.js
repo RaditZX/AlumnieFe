@@ -1,14 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/landingPage';
 import AddPage from './pages/addPage';
 
+
+
 import {BrowserRouter as Router, Routes,Route} from "react-router-dom"
 
-function App() {
+function App() {      
   return (
    <>
       <Router>
@@ -22,6 +25,8 @@ function App() {
       </Router>
    </>
   );
-}
+  }
 
 export default App;
+      
+
