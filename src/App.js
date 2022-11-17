@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/landingPage';
 import AddPage from './pages/addPage';
+import DashboardTable from './pages/DashboardTable'
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Register" element={<Register/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Add" element={<AddPage/>}/>
+          <Route path="/Dashboard/Table" element={<DashboardTable/>}/>
           <Route path="/" element={<LandingPage/>}/>
         </Routes>
       </Router>
