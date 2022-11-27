@@ -5,15 +5,16 @@ import Navbar from "../component/navbar";
 import App from "../App";
 import ReactApexChart  from 'react-apexcharts'
 import React, {useState} from 'react';
+import Link from "react-router-dom"
 
 
 export default function Dashboard() {
 
     const [state, setState] = useState({
-        series: [100, 120, 50, 50],
+        series: [100, 120, 50],
         options: {
           chart: {
-            width: 380,
+            width: 480,
             type: 'donut',
           },
           dataLabels: {
@@ -40,7 +41,7 @@ export default function Dashboard() {
           
         series: [{
             name: "Desktops",
-            data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+            data: [1500, 1200, 1600, 1000, 1400, 1100]
         }],
         options: {
           chart: {
@@ -67,7 +68,7 @@ export default function Dashboard() {
             },
           },
           xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            categories: ['2017', '2018', '2019', '2020', '2021', '2022'],
           }
         },
       
@@ -132,23 +133,23 @@ export default function Dashboard() {
                         <div className="container-bawah">
                             <div className="container-diagram">
                                 <div className="container-diagram-bulat">
-                                <div>
+                                <div className="donat-chart">
                                     <div class="chart-wrap">
                                     <ReactApexChart 
                                     options={state.options} 
                                     series={state.series} 
-                                    type="donut" width={350} />
+                                    type="donut" width={370} />
                                     </div>
                                     </div>
                                 </div>
                                 
                                 <div className="container-diagram-batang">
-                                <div className="chart-line">
-                                    <ReactApexChart 
-                                        options={state1.options} 
-                                        series={state1.series} 
-                                        type="line" width={640} />
-                                </div>
+                                  <div className="chart-line">
+                                      <ReactApexChart 
+                                          options={state1.options} 
+                                          series={state1.series} 
+                                          type="line" width={640} />
+                                  </div>
                                 </div>
                             </div>
 

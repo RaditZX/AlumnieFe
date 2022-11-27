@@ -6,10 +6,13 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/landingPage';
 import AddPage from './pages/addPage';
+import EditPage from './pages/EditPage';
+import DetailPage from './pages/DetailPage';
+import EditProfilePage from './pages/EditProfilePage';
 
 
 
-import {BrowserRouter as Router, Routes,Route} from "react-router-dom"
+import {BrowserRouter as Router, Routes,Route, Link} from "react-router-dom"
 
 function App() {      
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route path="/Register" element={<Register/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Add" element={<AddPage/>}/>
+          <Route path="/Edit" element={<EditPage/>}/>
+          <Route path="/Detail" element={<DetailPage/>}/>
+          <Route path="/EditProfile" element={<EditProfilePage/>}/>
           <Route path="/" element={<LandingPage/>}/>
         </Routes>
       </Router>

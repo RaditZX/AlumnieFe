@@ -1,5 +1,11 @@
+body{
+ overflow-x: hidden;
+}
+
 .flex-container {
     display: flex;
+    /* overflow-x: hidden; */
+    flex-direction: column;
 }
 
 .flex-item {
@@ -11,6 +17,24 @@
     height: 200px;
 }
 
+.form-edit{
+  display: flex;
+  justify-content: center;
+}
+
+.container-gambar-circle{
+  display: flex;
+  justify-content: center;
+  width: 12vw;
+  height: 25vh;
+  border: 1px solid black;
+  border-radius: 100px;
+  margin-left: 45vw;
+  /* background: black; */
+  background-image:url("../assets/addprof.jpg");
+  background-size: cover;
+}
+
 .form {
     margin-left: 10rem;
     width: 500px;
@@ -20,6 +44,7 @@
     display: flex;
     flex-direction: column;
 }
+
 
 
 

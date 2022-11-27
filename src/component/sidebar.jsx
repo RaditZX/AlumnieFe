@@ -1,9 +1,12 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import "../assets/style.css";
 import { Link } from "react-router-dom";
 
+
 export default function Sidebar() {
+
     return (
+
         <>
             <div className="container-sidebar">
                 <img src={require("../assets/toga.png")} alt="" className="img-toga" />
@@ -30,11 +33,11 @@ export default function Sidebar() {
                     </div>
 
                 </div>
-
+                <Link to="/Login">
                 <div className="component-logout">
-                    <img src={require("../assets/Logout.png")} alt="" className="img-logout" />
+                  <img src={require("../assets/Logout.png")} alt="" className="img-logout" />
                 </div>
-
+                </Link>
             </div>
         </>
     )
