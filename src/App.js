@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import LandingPage from './pages/landingPage';
 import AddPage from './pages/addPage';
 import EditPage from './pages/EditPage';
+import DetailPage from './pages/DetailPage';
+import EditProfilePage from './pages/EditProfilePage';
 
 
 
@@ -22,6 +24,8 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Add" element={<AddPage/>}/>
           <Route path="/Edit" element={<EditPage/>}/>
+          <Route path="/Detail" element={<DetailPage/>}/>
+          <Route path="/EditProfile" element={<EditProfilePage/>}/>
           <Route path="/" element={<LandingPage/>}/>
         </Routes>
       </Router>

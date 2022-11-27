@@ -50,12 +50,9 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    /* justify-content:space-evenly; */
     width: 5vw;
     height: 100vh;
     background-color: white;
-    /* border: 3px black; */
-    /* box-shadow: 10px 10px 5px rgb(129, 126, 126); */
 }
 
 .img-toga{
@@ -71,7 +68,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 5VW;
-    height: 55vh;
+    height: 45vh;
     /* background-color: red; */
     margin-top: 60%;
 }
@@ -127,7 +124,7 @@
 }
 
 .component-logout{
-    margin-top: 55vh;
+    margin-top: 30vh;
 }
 
 .img-logout{
@@ -166,7 +163,7 @@
 
 .container-fluid{
     background-color: #EEF0FA;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     /* overflow-y: hidden; */
 }
 
@@ -197,6 +194,13 @@
     width: 1.4vw;
     height: 1.8vh;
     margin-top: 6%;
+}
+
+.img-home{
+    margin-top: -0.5vw;
+    margin-left: 1vh;
+    width: 0.8vw;
+    height: 1.5vh;
 }
 
 .img-lonceng{
@@ -362,6 +366,14 @@
     margin-left: 6.5vw;
     background-color: white;
     border-radius: 10px;
+    align-items: center;
+}
+
+.donat-chart{
+    /* width: max-content; */
+    display: flex;
+    justify-content: center;
+    /* width: auto; */
 }
 
 .container-diagram-batang{
@@ -529,6 +541,7 @@
     width: max-content;
     display: flex;
     justify-content: center;
+    align-self: center;
 }
 
 .chart-line{

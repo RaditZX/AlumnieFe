@@ -14,7 +14,7 @@ export default function Dashboard() {
         series: [100, 120, 50],
         options: {
           chart: {
-            width: 380,
+            width: 480,
             type: 'donut',
           },
           dataLabels: {
@@ -133,12 +133,12 @@ export default function Dashboard() {
                         <div className="container-bawah">
                             <div className="container-diagram">
                                 <div className="container-diagram-bulat">
-                                <div>
+                                <div className="donat-chart">
                                     <div class="chart-wrap">
                                     <ReactApexChart 
                                     options={state.options} 
                                     series={state.series} 
-                                    type="donut" width={450} />
+                                    type="donut" width={370} />
                                     </div>
                                     </div>
                                 </div>
