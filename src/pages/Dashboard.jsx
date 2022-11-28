@@ -23,6 +23,9 @@ export default function Dashboard() {
           fill: {
             colors: ['#5570F1', '#FFCC91', '#97A5EB']
           },
+          chart: {
+            width: '20%'
+          },
           responsive: [{
             breakpoint: 480,
             options: {
@@ -59,7 +62,13 @@ export default function Dashboard() {
           },
           title: {
             text: 'Keterserapan Alumni',
-            align: 'center'
+            align: 'center',
+            style: {
+              fontSize:  '30px',
+              fontWeight:  'bold',
+              fontFamily:  undefined,
+              color:  '#263238'
+            },
           },
           grid: {
             row: {
@@ -69,7 +78,10 @@ export default function Dashboard() {
           },
           xaxis: {
             categories: ['2017', '2018', '2019', '2020', '2021', '2022'],
-          }
+          },
+          chart: {
+            width: '100%'
+        }
         },
       
       })
@@ -83,7 +95,7 @@ export default function Dashboard() {
                     <div className="d-flex1">
                         <Navbar />
                     
-                        <div className="container-jumlah">
+                        <div className="d-flex justify-content-center mb-4 " style={{marginLeft:"5vw"}}>
                             <div className="container-jumlah-component">
                                 <div className="container-jumlah-component-kelas">
                                     <div className="jumlah-alumni">
@@ -133,23 +145,19 @@ export default function Dashboard() {
                         <div className="container-bawah">
                             <div className="container-diagram">
                                 <div className="container-diagram-bulat">
-                                <div className="donat-chart">
                                     <div class="chart-wrap">
                                     <ReactApexChart 
                                     options={state.options} 
                                     series={state.series} 
-                                    type="donut" width={370} />
-                                    </div>
+                                    type="donut" style={{width:"50%"}} />
                                     </div>
                                 </div>
                                 
                                 <div className="container-diagram-batang">
-                                  <div className="chart-line">
                                       <ReactApexChart 
                                           options={state1.options} 
                                           series={state1.series} 
-                                          type="line" width={640} />
-                                  </div>
+                                          type="line" style={{width:"100%"}} />
                                 </div>
                             </div>
 
@@ -157,24 +165,16 @@ export default function Dashboard() {
                                 <h2 className="container-keterserapan-alumni-text1">
                                 Keterserapan Alumni 
                                 </h2>
-                                <div className="container-keterserapan-alumni-content">
-                                <div className="container-keterserapan-alumni-angka">
-                                    <h3>1</h3>
-                                    <h3>2</h3>
-                                    <h3>3</h3>
-                                </div>
-
-                                <div className="container-keterserapan-alumni-gambar">
-                                    <img src={require("../assets/itb.png")} alt="" className="img-itb" />
-                                    <img src={require("../assets/gits.png")} alt="" className="img-gitst" />
-                                    <img src={require("../assets/upi.png")} alt="" className="img-upi" />
-                                </div>
-
-                                <div className="container-keterserapan-alumni-text">
+                                <div className="d-flex">
+                                  <div className="d-flex justify-content-center align-items-center ms-2">
+                            `       <h3>1.</h3>
+                                  </div>
+                                  <div className="d-flex justify-content-center align-items-center ms-2">
+                                  <img src={require("../assets/itb.png")} alt=""  />
+                                  </div>
+                                  <div className="d-flex justify-content-center align-items-center ms-2">
                                     <h2 className="nama-univ"> Institus Teknologi Bandung</h2>
-                                    <h2 className="nama-univ"> PT Gits Indonesia</h2>
-                                    <h2 className="nama-univ"> Universitas Pendidikan Indonesia</h2>
-                                </div>
+                                  </div>
                                 </div>
                             </div>
 
