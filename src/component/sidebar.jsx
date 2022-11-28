@@ -9,7 +9,9 @@ export default function Sidebar() {
 
         <>
             <div className="container-sidebar">
-                <img src={require("../assets/toga.png")} alt="" className="img-toga" />
+                <div className="img-toga">
+                    <img src={require("../assets/toga.png")} alt=""  />
+                </div>
 
                 <div className="component">
                     <div className="container-dashboard">

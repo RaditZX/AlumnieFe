@@ -10,14 +10,15 @@ export default function Navbar() {
         <div className="container-navbar-dua">
           <div className="container-navbar-dua-kanan">
             <h5 className="dashboard">Dashboard</h5> 
-            <Link to="/Dashboard">
-            <img src={require("../assets/Home.png")} alt="" className="img-home" />
-            </Link>
           </div>
           <div className="container-navbar-dua-kiri">
             <div className="container-admin">
-              <h5>Admin</h5>
-              <img src={require("../assets/Vectorrr.png")} alt="" className="img-admin" />
+              <div className="text">
+              <p>Admin</p>
+              </div>
+              <div className="icon">
+                <img src={require("../assets/Vectorrr.png")} alt="" className="img-admin" />
+              </div>
             </div>
             <img src={require("../assets/Fill.png")} alt="" className="img-lonceng" />
             <Link to="/EditProfile">
