@@ -8,7 +8,7 @@ export default function Login() {
             <div className="background" style={{ backgroundColor: "#EEF0FA" }}>
                 <div className="container d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
                     <div className="container-login p-5">
-                        <div className="image d-flex align-items-center justify-content-center">
+                        <div className="d-flex align-items-center justify-content-center">
                             <img src={require("../assets/toga.png")} />
                         </div>
                         <div className="form-login mt-4">

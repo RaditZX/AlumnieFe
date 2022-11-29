@@ -9,10 +9,12 @@ import AddPage from './pages/addPage';
 import EditPage from './pages/EditPage';
 import DetailPage from './pages/DetailPage';
 import EditProfilePage from './pages/EditProfilePage';
+import Tabelalumni from './pages/tabelAlumni';
 
 
 
 import {BrowserRouter as Router, Routes,Route, Link} from "react-router-dom"
+import TabelAlumni from './pages/tabelAlumni';
 
 function App() {      
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/Detail" element={<DetailPage/>}/>
           <Route path="/EditProfile" element={<EditProfilePage/>}/>
           <Route path="/" element={<LandingPage/>}/>
+          <Route path="/tabel/alumni" element={<TabelAlumni/>}/>
+
         </Routes>
       </Router>
    </>
