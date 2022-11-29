@@ -9,23 +9,36 @@ export default function Navbar() {
       <div className="container-navbar">
         <div className="container-navbar-dua">
           <div className="container-navbar-dua-kanan">
-            <h5 className="dashboard">Dashboard</h5> 
+            <h5 className="dashboard">Dashboard</h5>
           </div>
           <div className="container-navbar-dua-kiri">
             <div className="container-admin">
               <div className="text">
-              <p>Admin</p>
+                <p>Admin</p>
               </div>
               <div className="icon">
-                <img src={require("../assets/Vectorrr.png")} alt="" className="img-admin" />
+                <img
+                  src={require("../assets/Vectorrr.png")}
+                  alt=""
+                  className="img-admin"
+                />
               </div>
             </div>
-            <img src={require("../assets/Fill.png")} alt="" className="img-lonceng" />
+            <img
+              src={require("../assets/Fill.png")}
+              alt=""
+              className="img-lonceng"
+            />
             <Link to="/EditProfile">
-            <img src={require("../assets/profile.png")} alt="" className="img-profile" /></Link>
+              <img
+                src={require("../assets/profile.png")}
+                alt=""
+                className="img-profile"
+              />
+            </Link>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
