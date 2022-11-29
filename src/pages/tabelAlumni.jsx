@@ -8,6 +8,7 @@ import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import AlumniSlider from "../component/alumniSlider";
+import { Link } from "react-router-dom";
 
 export default function Tabelalumni() {
   const [currentPage, setCurrentPage] = useState(
@@ -105,6 +106,7 @@ export default function Tabelalumni() {
             <AlumniSlider />
 
             <div className="container-bawah-between">
+            <Link to="/Add">
               <Button
                 size="sm"
                 style={{
@@ -115,7 +117,7 @@ export default function Tabelalumni() {
                 }}
               >
                 +
-              </Button>{" "}
+              </Button>{" "} </Link>
             </div>
 
             <div className="container-tabel-bawah">

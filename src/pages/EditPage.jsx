@@ -10,7 +10,7 @@ export default function EditPage() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
         <Sidebar/>
         <Navbar/>
-        <div className="flex-container">
+        <div className="d-flex flex-row">
             <div className="flex-item image">
                 <img src={require("../assets/addprof.jpg")}/>
             </div>
