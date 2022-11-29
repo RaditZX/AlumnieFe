@@ -1,15 +1,13 @@
-import { Form, Button } from "react-bootstrap";
 import "../assets/style.css";
 import Sidebar from "../component/sidebar";
 import Navbar from "../component/navbar";
-import App from "../App";
 import ReactApexChart  from 'react-apexcharts'
 import React, {useState} from 'react';
-import Link from "react-router-dom"
+import AlumniSlider from "../component/alumniSlider";
+
 
 
 export default function Dashboard() {
-
     const [state, setState] = useState({
         series: [100, 120, 50],
         options: {
@@ -91,56 +89,9 @@ export default function Dashboard() {
             <div className="container-fluid" style={{ margin: "0", padding: "0" }}>
                 <div className="d-flex">
                     <Sidebar />
-
                     <div className="d-flex1">
                         <Navbar />
-                    
-                        <div className="d-flex justify-content-center mb-4 " style={{marginLeft:"5vw"}}>
-                            <div className="container-jumlah-component">
-                                <div className="container-jumlah-component-kelas">
-                                    <div className="jumlah-alumni">
-                                        <h3 className="jumlah">Jumlah Alumni</h3>
-                                            <div className="orang1">
-                                                <h2 className="orang">90</h2>
-                                                <h4 className="orangg">orang</h4>
-                                            </div>
-                                    </div>
-                                    <div className="orang-alumni">
-                                        <h2 className="alumni">RPL</h2>
-                                    </div>                                    
-                                </div>
-                            </div>
-        
-                            <div className="container-jumlah-component2">
-                                <div className="container-jumlah-component-kelas2">
-                                    <div className="jumlah-alumni2">
-                                        <h3 className="jumlah">Jumlah Alumni</h3>
-                                            <div className="orang1">
-                                                <h2 className="orang">90</h2>
-                                                <h4 className="orangg">orang</h4>
-                                            </div>
-                                    </div>
-                                    <div className="orang-alumni">
-                                        <h2 className="alumni">MM</h2>
-                                    </div>                                    
-                                </div>
-                            </div>
-
-                            <div className="container-jumlah-component3">
-                                <div className="container-jumlah-component-kelas3">
-                                    <div className="jumlah-alumni2">
-                                        <h3 className="jumlah">Jumlah Alumni</h3>
-                                            <div className="orang1">
-                                                <h2 className="orang">90</h2>
-                                                <h4 className="orangg">orang</h4>
-                                            </div>
-                                    </div>
-                                    <div className="orang-alumni">
-                                        <h2 className="alumni">TKJ</h2>
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
+                        <AlumniSlider/>
 
                         <div className="container-bawah">
                             <div className="container-diagram">
@@ -173,7 +124,7 @@ export default function Dashboard() {
                                   <img src={require("../assets/itb.png")} alt=""  />
                                   </div>
                                   <div className="d-flex justify-content-center align-items-center ms-2">
-                                    <h2 className="nama-univ"> Institus Teknologi Bandung</h2>
+                                    <p> Institus Teknologi Bandung</p>
                                   </div>
                                 </div>
                             </div>
