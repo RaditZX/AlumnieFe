@@ -12,6 +12,7 @@ import { useLocation,useNavigate,Link, } from "react-router-dom";
 import { FaEye, FaPen, FaTrash, FaUser } from "react-icons/fa";
 import { confirmAlert } from "react-confirm-alert";
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import { Link } from "react-router-dom";
 
 export default function Tabelalumni() {
   const [alumni, setAlumni] = useState([]);
@@ -114,6 +115,8 @@ const deleteAlumni = (id) => {
             <div className="container-bawah-between">
               <Link
                 to={"/alumni/add"}
+            <Link to="/Add">
+              <Button
                 size="sm"
                 style={{
                   color: "black",
@@ -124,6 +127,7 @@ const deleteAlumni = (id) => {
               >
                 +
               </Link>{" "}
+              </Button>{" "} </Link>
             </div>
 
             <div className="container-tabel-bawah">

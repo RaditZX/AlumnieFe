@@ -132,6 +132,9 @@ export default function AddPage() {
         <Navbar title="Alumni/add"/>
         <div className="d-flex justify-content-center align-items-center">
             <div className="">
+        <Navbar/>
+        <div className="d-flex flex-row">
+            <div className="flex-item image">
                 <img src={require("../assets/addprof.jpg")}/>
             </div>
             <div className="flex-item form">
