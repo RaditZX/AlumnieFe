@@ -6,44 +6,42 @@ export default function LandingPage(){
     return (
         <>
             <Navbar/>
-            <div className="container-fluid d-flex flex-column align-items-center justify-content-center" style={{margin:"0"}}>
-                <div className="d-flex" style={{ backgroundColor:"#25244E",width:"100vw" }}>
-                    <div className="image d-flex flex-column justify-content-center align-items-center " style={{ width:"100vw" }}>
-                        <img src={require("../assets/landing-1.png")}/>
-                    </div>
-                    <div className="contents d-flex flex-column align-items-center justify-content-center" style={{ width:"100vw",height:"80vh" }}>
-                        <div className="title d-flex flex-column align-items-center">
-                            <h1 style={{ color: "white" }}>ALUMNIE</h1>
-                        </div>
-                        < div className="desc d-flex flex-column align-items-center">
-                            <h6 style={{ color: "white" }}>Merupakan Website yang digunakan untuk mendata alumni dengan mudah</h6>
-                        </div>
-                    </div>
-                </div>
-                <div className="d-flex">
-                    <div className="contents d-flex flex-column  justify-content-center p-4">
-                       <div className="d-flex justify=content-between" >
-                            <div className="container-content">
-                                    <h6>Sarana mempermudah pengaturan dan pengolahan data alumni</h6>
-                            </div>
-                            <div className="container-content" style={{ backgroundColor:"white",color:"black" }}>
-                                    <h6>Sarana mempermudah pengaturan dan pengolahan data alumni</h6>
-                            </div>
-                       </div>
-                       <div className="d-flex mt-5">
-                            <div className="container-content">
-                                    <h6>Sarana mempermudah pengaturan dan pengolahan data alumni</h6>
-                            </div>
-                            <div className="container-content">
-                                    <h6>Sarana mempermudah pengaturan dan pengolahan data alumni</h6>
-                            </div>
-                       </div>
-                    </div>
-                    <div className="image d-flex align-items-center justify-content-center">
-                        <img src={require("../assets/Saly-22.png")}/>
-                    </div>
-                </div>
+            <div className="container-awal">
+                <img src={require("../assets/landing-1.png")} className="img-landingpage1"/>
 
+                <div className="container-awal-2">
+                    <h1 style={{ color: "white" }}>ALUMNIE</h1>
+                    <h6 style={{ color: "white" }}>Merupakan Website yang digunakan untuk mendata alumni dengan mudah</h6>
+                </div>
+            </div>
+
+            <div className="container-kedua">
+                <div className="container-kedua-1">
+                    <div className="component1">
+                        <div className="component1-1">
+                            <h3>Sarana mempermudah
+                            pengaturan dan pengolahan
+                            data alumni</h3>
+                        </div>
+                        <div className="component1-2">
+                            <h3>Website ini dapat membantu 
+                            menampilkan profil alumni
+                            yang terbaru.</h3>
+                        </div>
+                    </div>
+
+                    <div className="component2">
+                        <div className="component2-1">
+                            <h3>Website ini memudahkan
+                            pendataan alumni</h3>
+                        </div>
+                        <div className="component2-2">
+                            <h3>Sekolah memiliki
+                            data alumni yang akurat</h3>
+                        </div>
+                    </div>
+                </div>
+                <img src={require("../assets/Saly-22.png")}/>
             </div>
         </>
     )

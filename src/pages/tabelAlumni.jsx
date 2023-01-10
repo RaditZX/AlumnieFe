@@ -5,91 +5,98 @@ import Navbar from "../component/navbar";
 import App from "../App";
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import AlumniSlider from "../component/alumniSlider";
+import axios from "axios";
+import { useEffect } from "react";
+import { useLocation,useNavigate,Link, } from "react-router-dom";
+import { FaEye, FaPen, FaTrash, FaUser } from "react-icons/fa";
+import { confirmAlert } from "react-confirm-alert";
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 export default function Tabelalumni() {
+  const [alumni, setAlumni] = useState([]);
+  const [search,setSearch] = useState("")
   const [currentPage, setCurrentPage] = useState(
     parseInt("1") || sessionStorage.getItem("page")
   );
+  const location = useLocation();
+  const navigate = useNavigate();
+  const Nama = "nama="+new URLSearchParams(location.search).get('search');
 
-  const [state, setState] = useState({
-    series: [100, 120, 50, 50],
-    options: {
-      chart: {
-        width: 380,
-        type: "donut",
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      fill: {
-        colors: ["#5570F1", "#FFCC91", "#97A5EB"],
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200,
-            },
-            legend: {
-              show: true,
-            },
+  const getAlumni = () => {
+    if ( new URLSearchParams(location.search).get('search') === null ) {
+      axios
+      .get(process.env.REACT_APP_API_LINK + `api/alumni/alumniData`, {
+        headers: { "Authorization": "JWT" + " " + localStorage.getItem('token') }
+        
+      })
+      .then((res) => {
+        console.log(res.data);
+        setAlumni(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }else{
+      axios
+      .get(process.env.REACT_APP_API_LINK + `api/alumni/alumniData?${Nama}`, {
+        headers: { "Authorization": "JWT" + " " + localStorage.getItem('token') }
+        
+      })
+      .then((res) => {
+        console.log(res.data);
+        setAlumni(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+  };
+
+  const getAlumniPagination = () => {
+    if (search === ''){
+        navigate(`/alumni/tabel`)
+    }
+    else{
+         navigate(`/alumni/tabel?search=${search}`)
+    }
+    window.location.reload();
+  }
+
+const deleteAlumni = (id) => {
+  confirmAlert({
+      title: 'Delete',
+      message: 'Anda yakin ingin menghapus data ini?',
+      buttons: [
+          {
+              label: 'Yes',
+              onClick: () => {
+                  axios.delete(process.env.REACT_APP_API_LINK+`api/alumni/deleteAlumni/${id}`,{
+                    headers: { "Authorization": "JWT" + " " + localStorage.getItem('token') }
+                    
+                  })
+                  .then(res => {
+                      console.log(res.data);
+                      getAlumni()
+                  })
+                  .catch(err => {
+                      console.log(err);
+                  })
+              }      
           },
-        },
-      ],
-    },
-  });
+          {
+              label: 'No'
+          }
+      ]});
+}
 
-  const [state1, setState1] = useState({
-    series: [
-      {
-        name: "Desktops",
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
-      },
-    ],
-    options: {
-      chart: {
-        height: 350,
-        type: "line",
-        zoom: {
-          enabled: false,
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: "straight",
-      },
-      title: {
-        text: "Keterserapan Alumni",
-        align: "center",
-      },
-      grid: {
-        row: {
-          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
-          opacity: 0.5,
-        },
-      },
-      xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-        ],
-      },
-    },
-  });
 
+
+
+
+  useEffect(() => {
+    getAlumni();
+  }, []);
   return (
     <>
       <link
@@ -101,11 +108,12 @@ export default function Tabelalumni() {
           <Sidebar />
 
           <div className="d-flex1">
-            <Navbar />
+            <Navbar title="Alumni"/>
             <AlumniSlider />
 
             <div className="container-bawah-between">
-              <Button
+              <Link
+                to={"/alumni/add"}
                 size="sm"
                 style={{
                   color: "black",
@@ -115,7 +123,7 @@ export default function Tabelalumni() {
                 }}
               >
                 +
-              </Button>{" "}
+              </Link>{" "}
             </div>
 
             <div className="container-tabel-bawah">
@@ -126,6 +134,7 @@ export default function Tabelalumni() {
                   <div className="container-table-top-right">
                     <div>
                       <input
+                        value={search}
                         type="text"
                         style={{
                           marginTop: "0px",
@@ -133,9 +142,11 @@ export default function Tabelalumni() {
                           height: "30px",
                         }}
                         placeholder="Search.."
+                        onChange={(e)=> setSearch(e.target.value)}
                       />
                     </div>
                     <Button
+                      onClick={getAlumniPagination}
                       size="sm"
                       style={{
                         color: "black",
@@ -146,42 +157,6 @@ export default function Tabelalumni() {
                       }}
                     >
                       Filter
-                    </Button>{" "}
-                    <Button
-                      size="sm"
-                      style={{
-                        color: "black",
-                        borderColor: "black",
-                        backgroundColor: "white",
-                        marginLeft: "1rem",
-                        height: "30px",
-                      }}
-                    >
-                      Filter
-                    </Button>{" "}
-                    <Button
-                      size="sm"
-                      style={{
-                        color: "black",
-                        borderColor: "black",
-                        backgroundColor: "white",
-                        marginLeft: "1rem",
-                        height: "30px",
-                      }}
-                    >
-                      Share
-                    </Button>{" "}
-                    <Button
-                      size="sm"
-                      style={{
-                        color: "black",
-                        borderColor: "black",
-                        backgroundColor: "white",
-                        marginLeft: "1rem",
-                        height: "30px",
-                      }}
-                    >
-                      Bulk Action
                     </Button>{" "}
                   </div>
                 </div>
@@ -198,30 +173,28 @@ export default function Tabelalumni() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>2021118600</td>
-                        <td>John Sterling</td>
-                        <td>XII RPL 1</td>
-                        <td>2022</td>
-                        <td>Kuliah</td>
-                        <td>--</td>
-                      </tr>
-                      <tr>
-                        <td>2021118600</td>
-                        <td>John Sterling</td>
-                        <td>XII RPL 1</td>
-                        <td>2022</td>
-                        <td>Kuliah</td>
-                        <td>--</td>
-                      </tr>
-                      <tr>
-                        <td>2021118600</td>
-                        <td>John Sterling</td>
-                        <td>XII RPL 1</td>
-                        <td>2022</td>
-                        <td>Kuliah</td>
-                        <td>--</td>
-                      </tr>
+                      {alumni.map((alumni,index) => {
+                        return(
+                          <tr key={index}>
+                            <td>{alumni.nisn}</td>
+                            <td>{alumni.nama}</td>
+                            {alumni.Kelas.map((kelas) => {
+                              return(
+                                <td>{kelas.nama_kelas}</td>
+                              )
+                            })}
+                            <td>{alumni.angkatan}</td>
+                            {alumni.universitas.map((status) => {
+                              return(
+                                <td>{status.universitas}</td>
+                              )
+                            })}
+                            <td><Link to={`/alumni/detail/${alumni._id}`}><FaEye className="action-1"/></Link>
+                            <Link to={`/alumni/edit/${alumni._id}`}><FaPen className="action-2" /></Link>
+                            <Link onClick={() => deleteAlumni(alumni._id)}><FaTrash className="action-3" /></Link></td>
+                          </tr>
+                        )
+                      })}
                     </tbody>
                   </Table>
                 </div>

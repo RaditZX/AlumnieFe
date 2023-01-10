@@ -14,9 +14,7 @@ export default function landingNavbar() {
                         <Link className="items" style={{ marginRight:"1rem" }}>HOME</Link>
                         <Link className="items">ABOUT</Link>
                     </div>
-                    <div className="signin">
-                        <button className="btn btn-primary">Login</button>
-                    </div>
+                    <a href="/login" className="a-href-login">Login</a>
                 </div>
             </nav>
         </header>
