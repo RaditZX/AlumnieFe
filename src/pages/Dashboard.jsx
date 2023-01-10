@@ -2,15 +2,46 @@ import "../assets/style.css";
 import Sidebar from "../component/sidebar";
 import Navbar from "../component/navbar";
 import ReactApexChart from "react-apexcharts";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import AlumniSlider from "../component/alumniSlider";
+import axios from "axios";
 
 export default function Dashboard() {
+  const [dataKuliah,setDataKuliah] = useState()
+  const [dataKerja,setDataKerja] = useState()
+  const [dataWirausaha,setDataWirausaha] = useState()
+  let kuliah = +dataKuliah;
+  const getStatusAnalytics = () => {
+    axios
+      .get(process.env.REACT_APP_API_LINK + `api/analyticsStatus/statusAnalytics`, {
+        headers: { "Authorization": "JWT" + " " + localStorage.getItem('token') }
+        
+      }).then((res) => {
+        console.log(res.data);
+        setDataKuliah(res.data.data.kuliah)
+        setDataKerja(res.data.data.kerja)
+        setDataWirausaha(res.data.data.wirausaha)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+
+    useEffect(() => {
+      getStatusAnalytics();
+    }, []);
+
+
   const [state, setState] = useState({
-    series: [100, 120, 50],
+    series:[7,5,5],
+    // series: [{
+      // data: [parseInt(dataKuliah),parseInt(dataKerja),parseInt(dataWirausaha)]
+    //   data:[120,30,40]
+    // }],
     options: {
+      labels:['Kuliah','Kerja','Wirausaha'],
       chart: {
-        width: 480,
+        width: 12,
         type: "donut",
       },
       dataLabels: {
@@ -84,13 +115,15 @@ export default function Dashboard() {
     },
   });
 
+  
+
   return (
     <>
       <div className="container-fluid" style={{ margin: "0", padding: "0" }}>
         <div className="d-flex">
           <Sidebar />
           <div className="d-flex1">
-            <Navbar />
+            <Navbar title="Dashboard" />
             <AlumniSlider />
 
             <div className="container-bawah">

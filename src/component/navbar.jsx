@@ -3,13 +3,13 @@ import "../assets/style.css";
 import { Link } from "react-router-dom";
 import App from "../App";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <>
       <div className="container-navbar">
         <div className="container-navbar-dua">
           <div className="container-navbar-dua-kanan">
-            <h5 className="dashboard">Dashboard</h5>
+            <h5 className="dashboard">{props.title}</h5>
           </div>
           <div className="container-navbar-dua-kiri">
             <div className="container-admin">
