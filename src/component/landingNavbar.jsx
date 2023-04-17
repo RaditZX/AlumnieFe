@@ -6,15 +6,14 @@ export default function landingNavbar() {
     return (
         <header className="header sticky-top">
             <nav>
-                <div className="d-flex justify-content-between align-items-center p-3 sticky" style={{ backgroundColor:"#25244E" }}>
-                    <div className="brand">
-                        <h2 className="text-white">ALUMNIE</h2>
+                <div className="d-flex justify-content-between align-items-center p-3 sticky " >
+                    <div className="brand d-flex">
+                        <h2 className="text-white " style={{marginRight:'1rem',textShadow:'2px 2px black'}}>ALUMNIE</h2>
+                        <div className="nav_items">
+                            <Link className="items" style={{ marginRight:"1rem" ,textShadow:'2px 2px black'}}>HOME</Link>
+                            <Link className="items" style={{textShadow:'2px 2px black'}}>ABOUT</Link>
+                        </div>
                     </div>
-                    <div className="nav_items">
-                        <Link className="items" style={{ marginRight:"1rem" }}>HOME</Link>
-                        <Link className="items">ABOUT</Link>
-                    </div>
-                    <a href="/login" className="a-href-login">Login</a>
                 </div>
             </nav>
         </header>

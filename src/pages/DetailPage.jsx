@@ -12,10 +12,13 @@ export default function AddPage() {
   const [daftarKelas, setDaftarKelas] = useState([]);
   const [alamat, setAlamat] = useState("");
   const [no_hp, setNo_telp] = useState();
+  const [image,setImage] = useState('')
+  const [detail_status, setDetailStatus] = useState();
   const [jenis_kelamin, setJenis_kelamin] = useState("");
   const [kelas, setJurusan] = useState("");
   const [angkatan, setAngkatan] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState([]);
+  const [status2,setStatus2] = useState("")
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -48,7 +51,11 @@ export default function AddPage() {
         setJurusan(res.data.data.kelas);
         setNo_telp(res.data.data.no_hp);
         setAngkatan(res.data.data.angkatan);
-        setStatus(res.data.data.status);
+        setDetailStatus(res.data.data.detail_status);
+        setStatus(res.data.statusAlumni);
+        setStatus2(res.data.data.status)
+        setImage(res.data.data.image)
+        console.log(res.data.statusAlumni);
         setJenis_kelamin(res.data.data.jenis_kelamin);
       })
       .catch((err) => {
@@ -66,11 +73,11 @@ export default function AddPage() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       ></link>
-      <Sidebar />
+      <Sidebar alumni='active' />
       <Navbar title={`Alumni/detail/${nama}`} />
-      <div className="d-flex justify-content-center align-items-center">
-            <div className="">
-          <img src={require("../assets/addprof.jpg")} />
+      <div className="d-flex justify-content-center">
+        <div className=" w-50 d-flex justify-content-center" >
+          <img src={"http://localhost:4000/images/"+image} style={{maxWidth:'100%',height:'100vh'}} />
         </div>
         <div className="flex-item form">
           <Form>
@@ -106,7 +113,7 @@ export default function AddPage() {
               <Form.Select
                 value={kelas}
                 onChange={(e) => setJurusan(e.target.value)}
-                readOnly
+                disabled
               >
                 <option>Pilih Jurusan</option>
                 {daftarKelas?.map((kelas) => {
@@ -119,7 +126,7 @@ export default function AddPage() {
               <Form.Select
                 value={angkatan}
                 onChange={(e) => setAngkatan(e.target.value)}
-                readOnly
+                disabled
               >
                 <option>Pilih Angkatan</option>
                 <option>2022</option>
@@ -131,7 +138,7 @@ export default function AddPage() {
               <Form.Select
                 value={jenis_kelamin}
                 onChange={(e) => setJenis_kelamin(e.target.value)}
-                readOnly
+                disabled
               >
                 <option>Pilih Jenis Kelamin</option>
                 <option value={"L"}>Laki-laki</option>
@@ -152,17 +159,108 @@ export default function AddPage() {
               </div>
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Status</Form.Label>
-              <Form.Select
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}
-                readOnly
-              >
-                <option>Pilih Status</option>
-                <option>Bekerja</option>
-                <option>Wirausaha</option>
-                <option value={"6351fd9c0d1c4c2348385649"}>Kuliah</option>
-              </Form.Select>
+            <Form.Label>Status</Form.Label>
+              {status2 =="Masa Tunggu" ? 
+                           <Form.Control
+                            type="text"
+                            value={status2 == "Masa Tunggu" ? 
+                            "Masa Tunggu" :null}
+                            readOnly
+                          />:null}
+              {status.map((status1) => {
+                return (
+                  <div>
+
+                    
+                  
+                    {status1.universitas.map((univ) => {
+                      console.log(univ.universitas);
+                      return (
+                        <div>
+                          
+                           <Form.Control
+                            type="text"
+                            value={'Kuliah'}
+                            readOnly
+                          />
+                          <Form.Label>Universitas</Form.Label>
+                          <Form.Control
+                            type="text"
+                            value={univ.universitas}
+                            readOnly
+                          />
+                          <Form.Label>Alamat</Form.Label>
+                          <Form.Control
+                            type="text"
+                            value={univ.alamat}
+                            readOnly
+                          />
+                        </div>
+                      );
+                    })}
+                    {status1.perusahaan.map((perusahaan) => {
+                      return (
+                        <div>
+
+                           <Form.Control
+                            type="text"
+                            value={'Bekerja'}
+                            readOnly
+                          />
+                             <Form.Label>Perusahaan</Form.Label>
+                          <Form.Control
+                            type="text"
+                            value={perusahaan.perusahaan}
+                            readOnly
+                          />
+                          <Form.Label>Alamat</Form.Label>
+                          <Form.Control
+                            type="text"
+                            value={perusahaan.alamat}
+                            readOnly
+                          />
+                        </div>
+                      );
+                    })}
+                    {status1.wirausaha.map((wirausaha) => {
+                      return (
+                        <div>
+
+                           <Form.Control
+                            type="text"
+                            value={'Berwirausaha'}
+                            readOnly
+                          />
+                           <Form.Label>Wirausaha</Form.Label>
+                          <Form.Control
+                            type="text"
+                            value={wirausaha.wirausaha}
+                            readOnly
+                          />
+                          <Form.Label>Alamat</Form.Label>
+                          <Form.Control
+                            type="text"
+                            value={wirausaha.alamat}
+                            readOnly
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicHP">
+              {detail_status ? <Form.Label>Jurusan/posisi</Form.Label> :  null}
+              {detail_status ?
+              <div>
+                <Form.Control
+                  type="text"
+                  value={detail_status}
+                  onChange={(e) => setDetailStatus(e.target.value)}
+                  readOnly
+                />
+              </div> : null}
             </Form.Group>
           </Form>
         </div>

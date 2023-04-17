@@ -1,9 +1,10 @@
 import { Button, Form } from "react-bootstrap";
 import Sidebar from "../component/sidebar";
 import Navbar from "../component/navbar";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../auth";
 import "../assets/Profile.css";
 
 export default function AddPage() {
@@ -12,8 +13,11 @@ export default function AddPage() {
   const [no_hp, setNo_telp] = useState();
   const [jenis_kelamin, setJenis_kelamin] = useState("");
   const [jabatan, setJabatan] = useState("");
+  const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const id  = localStorage.getItem("id");
+
+  currentUser ? console.log("online") : navigate("/login");
 
   const getUser = () => {
     axios
@@ -56,8 +60,7 @@ export default function AddPage() {
         }
       )
       .then((res) => {
-        console.log(res.data);
-        navigate("/alumni/tabel");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -146,7 +149,7 @@ export default function AddPage() {
                     ></i>
                   </div>
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" className="w-100" type="submit">
                   Simpan
                 </Button>
               </Form>
