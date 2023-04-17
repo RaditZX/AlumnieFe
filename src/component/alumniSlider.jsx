@@ -24,7 +24,6 @@ export default function AlumniSlider() {
         headers: { "Authorization": "JWT" + " " + localStorage.getItem('token') }
         
       }).then((res) => {
-        console.log(res.data);
         setRPL(res.data.data.RPL);
         setMM(res.data.data.MM);
         setTKJ(res.data.data.TKJ);
@@ -40,7 +39,6 @@ export default function AlumniSlider() {
           headers: { "Authorization": "JWT" + " " + localStorage.getItem('token') }
           
         }).then((res) => {
-          console.log(res.data);
           setTOI(res.data.data.TOI)
           setTITL(res.data.data.TITL)
         })
@@ -55,7 +53,6 @@ export default function AlumniSlider() {
           headers: { "Authorization": "JWT" + " " + localStorage.getItem('token') }
           
         }).then((res) => {
-          console.log(res.data);
           setAV(res.data.data.AV)
         })
         .catch((err) => {
@@ -80,7 +77,6 @@ export default function AlumniSlider() {
         modules={[Navigation]}
         slidesPerView={3}
         spaceBetween={10}
-        navigation
         loop={true}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
       >

@@ -1,11 +1,14 @@
 import { Form, Button, Alert } from "react-bootstrap";
 import "../assets/style.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Navigate } from "react-router-dom";
+import { AuthContext } from "../auth";
+import app from "../base";
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   const navigate = useNavigate()
+  const {pathname} = useLocation()
   const logout = () => {
     confirmAlert({
         title: 'Logout',
@@ -13,15 +16,14 @@ export default function Sidebar() {
         buttons: [
             {
                 label: 'Yes',
-                onClick: () => {
-                 navigate('/login')
-                }      
+                onClick: () =>{ navigate('/login') && app.auth().signOut() }
             },
             {
                 label: 'No'
             }
         ]});
   }
+
   return (
     <>
       <div className="container-sidebar">
@@ -30,36 +32,22 @@ export default function Sidebar() {
         </div>
 
         <div className="component">
-          <div className="d-flex justify-content-center align-items-center flex-column">
+          <div className="d-flex justify-content-center align-items-center flex-column mb-2">
             <NavLink to={"/dashboard"}>
               <div className="container-dashboard">
                 <img src={require("../assets/dashboard_1.png")} alt="" />
               </div>
             </NavLink>
           </div>
-          <div className="d-flex justify-content-center align-items-center flex-column">
-            <NavLink to={"/alumni/tabel"}>
+          <div className="d-flex justify-content-center align-items-center flex-column mb-2">
+            <NavLink to="/alumni/tabel?page=1&limit=10" className={props.alumni ? 'active' : null } >
               <div className="container-dashboard">
-                <img src={require("../assets/active.png")} alt="" />
+                <img src={require("../assets/Vector.png")} alt="" />
               </div>
             </NavLink>
           </div>
-          <div className="d-flex justify-content-center align-items-center flex-column">
-            <NavLink to={"/universitas/tabel"}>
-              <div className="container-dashboard">
-              <img src={require("../assets/Vector.png")} alt="" />
-              </div>
-            </NavLink>
-          </div>
-          <div className="d-flex justify-content-center align-items-center flex-column">
-            <NavLink to={"/perusahaan/tabel"}>
-              <div className="container-dashboard">
-                <img src={require("../assets/Work.png")} alt="" />
-              </div>
-            </NavLink>
-          </div>
-          <div className="d-flex justify-content-center align-items-center flex-column">
-            <NavLink to={"/wirausaha/tabel"}>
+          <div className="d-flex justify-content-center align-items-center flex-column mb-2">
+            <NavLink to={"/alumni/jumlah"} className={props.wirausaha ? 'active' : null }>
               <div className="container-dashboard">
                 <img src={require("../assets/wirausaha.png")} alt="" />
               </div>

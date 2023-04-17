@@ -30,15 +30,23 @@
 .container-login{
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 0px;
-    width: 500px;
     border-radius: 10px;
+    max-width: 1000px;
     
+}
+
+.background-blur{
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
 }
 
 .background{
     width: 100vw;
     height: 100vh;
-}
+    background-image: url('../assets/backgroundLanding.jpg');
+    background-size: cover;
+}   
 
 .form-login{
     padding: 0;
@@ -82,7 +90,7 @@
 .component{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 5VW;
     height: 45vh;
     /* background-color: red; */
@@ -163,7 +171,7 @@
     display: flex;
     justify-content: space-between;
     width: 95vw;
-    height: 9vh;
+    height: 7vh;
     background-color: white;
     margin-left: 5vw;
 }
@@ -187,6 +195,7 @@
 
 .container-fluid{
     background-color: #EEF0FA;
+    height: max-content;
     /* overflow-x: hidden; */
     /* overflow-y: hidden; */
 }
@@ -259,7 +268,7 @@
 .img-profile{
     width: 2.3vw;
     height: 5vh;
-    margin-top: 1.5%; 
+    margin-top: 20%; 
 }
 
 .container-jumlah{
@@ -398,12 +407,13 @@
     width: 100%;
     border-radius: 10px;
     flex-direction: column;
-    height: 70vh;
+    height: 72vh;
 
 }
 
 .container-table-item {
     display: flex;
+    flex-direction: column;
     margin-left: 1rem;
     margin-right: 1rem;
 }

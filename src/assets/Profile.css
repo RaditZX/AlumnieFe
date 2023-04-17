@@ -8,10 +8,6 @@ body{
     flex-direction: column;
 }
 
-.flex-item {
-    margin: 2rem;
-}
-
 .image {
     margin-left: 10rem;
     height: 200px;
@@ -36,7 +32,7 @@ body{
 }
 
 .form {
-    margin-left: 10rem;
+    margin-left: 3rem;
     width: 500px;
 }
 
